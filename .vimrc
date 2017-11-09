@@ -1,3 +1,12 @@
+set nocompatible
+set showmode
+set autoindent
+set copyindent
+set showmatch
+set title
+set cursorline
+
+
 " Set number lines
 set number
 " Set syntax highlighting
