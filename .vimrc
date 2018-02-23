@@ -12,14 +12,16 @@ call vundle#begin('~/some/path/here')
 Plugin 'VundleVim/Vundle.vim'
 
 " ==== My Plugins
-" Papercolor Theme
-Plugin 'NLKNguyen/papercolor-theme'
+" Theme 24bit
+Plugin 'morhetz/gruvbox'
 " Elixir Plugin
 Plugin 'elixir-editors/vim-elixir'
 " Syntaxis checker
 Plugin 'scrooloose/syntastic'
 " Statusbar chula
 Plugin 'itchyny/lightline.vim'
+
+" Papercolor Theme -  Plugin 'NLKNguyen/papercolor-theme'
 " ===== All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -38,26 +40,31 @@ set cursorcolumn " Highlight current column
 set showmatch " Highlight matching [{()}]
 
 syntax on " Enable syntax highlighting
-set t_Co=256 " Set 256color mode
+
+set termguicolors
+if &term == "xterm"
+  set t_Co=256
+endif
 
 " Lightline settings
 set laststatus=2
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'gruvbox',
     \ }
 
 " PaperColor Theme settings
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \	  'allow_bold': 1,
-  \	  'allow_italic':1
-  \     }
-  \   }
-  \ }
+"let g:PaperColor_Theme_Options = {
+"  \   'theme': {
+"  \     'default': {
+"  \	  'allow_bold': 1,
+"  \	  'allow_italic':1
+"  \     }
+"  \   }
+"  \ }
+
 set background=dark
-colorscheme PaperColor
+colorscheme gruvbox
 
 " Set tab = 4 spaces
 set expandtab "Tabs are spaces
