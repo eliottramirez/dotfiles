@@ -17,14 +17,19 @@ autoload -Uz promptinit
 promptinit
 
 # prompt theme
-export PS1="%B%F{160}%f  %F{189}%n%f %F{}:%F %F{15}%1~%f %F{9}➜%f %b"
+export PS1="%B%F{160}%f%F{189}%n%f %F{}:%F %F{15}%1~%f %F{9}➜%f %b"
 
-# =============== aliases ========================
+# Aliases
 alias ls='exa -a'
 alias lsl='exa -lah'
 alias lst='exa -T'
 
-# ============== zplug ====================
+# Named Directories
+hash -d Elixir="/home/eliott/Documents/Dev/Elixir"
+hash -d Dev="/home/eliott/Documents/Dev"
+hash -d Cards="/home/eliott/Documents/Dev/Elixir/Udemy/cards"
+
+# ZPlug Config
 # Source to bin file
 source /usr/share/zsh/scripts/zplug/init.zsh
 #enhancd
