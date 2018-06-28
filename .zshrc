@@ -19,19 +19,24 @@ promptinit
 # prompt theme
 export PS1="%B%F{160}%f%F{189}%n%f %F{}:%F %F{15}%1~%f %F{9}➜%f %b"
 
+# Autostart tmux
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
+
 # Aliases
 alias ls='exa -a'
 alias lsl='exa -lah'
-alias lst='exa -T'
+alias lst='exa -Ta'
 
 # Named Directories
-hash -d Elixir="/home/eliott/Documents/Dev/Elixir"
-hash -d Dev="/home/eliott/Documents/Dev"
-hash -d Cards="/home/eliott/Documents/Dev/Elixir/Udemy/cards"
+#hash -d Elixir="/home/eliott/Documents/Dev/Elixir"
+#hash -d Dev="/home/eliott/Documents/Dev"
+#hash -d Cards="/home/eliott/Documents/Dev/Elixir/Udemy/cards"
 
 # ZPlug Config
 # Source to bin file
-source /usr/share/zsh/scripts/zplug/init.zsh
+#source /usr/share/zsh/scripts/zplug/init.zsh
 #enhancd
-zplug "b4b4r07/enhancd", use:init.sh
-source ~/.zplug/repos/b4b4r07/enhancd/init.sh
+#zplug "b4b4r07/enhancd", use:init.sh
+#source ~/.zplug/repos/b4b4r07/enhancd/init.sh

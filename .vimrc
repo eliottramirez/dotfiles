@@ -7,7 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Pass a path where Vundle should install plugins
-call vundle#begin('~/some/path/here')
+call vundle#begin('~/.vim/plugins')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -16,6 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 " Elixir Plugin
 Plugin 'elixir-editors/vim-elixir'
+" ElixirSense Alchemist Plugin
+Plugin 'slashmili/alchemist.vim'
 " Syntaxis checker
 Plugin 'scrooloose/syntastic'
 " Statusbar chula
@@ -66,10 +68,10 @@ let g:lightline = {
 set background=dark
 colorscheme gruvbox
 
-" Set tab = 4 spaces
+" Set tab = 2 spaces
 set expandtab "Tabs are spaces
-set tabstop=4 "Number of visual spaces per TAB
-set shiftwidth=4
+set tabstop=2 "Number of visual spaces per TAB
+set shiftwidth=2
 set smarttab
 
 " Allows cursor change in tmux mode
