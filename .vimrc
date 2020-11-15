@@ -1,84 +1,47 @@
-"Vi iMproved necesario
-set nocompatible
+"Vundle
+  set nocompatible
+  filetype off
 
-" ---------------------------------------VUNDLE----------------------------------------------
-filetype off
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" Pass a path where Vundle should install plugins
-call vundle#begin('~/.vim/plugins')
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+  set rtp+=~/.vim/vundle/Vundle.vim
+  call vundle#begin('~/.vim/plugins/')
 
-" ==== My Plugins
-" Theme 24bit
-Plugin 'morhetz/gruvbox'
-" Elixir Plugin
-Plugin 'elixir-editors/vim-elixir'
-" ElixirSense Alchemist Plugin
-Plugin 'slashmili/alchemist.vim'
-" Syntaxis checker
-Plugin 'scrooloose/syntastic'
-" Statusbar chula
-Plugin 'itchyny/lightline.vim'
+  Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle
+  Plugin 'morhetz/gruvbox'
+  Plugin 'yggdroot/indentline'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'itchyny/lightline.vim'
 
-" Papercolor Theme -  Plugin 'NLKNguyen/papercolor-theme'
-" ===== All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" -------------------------------------------------------------------------------------------
+  call vundle#end()
+  filetype plugin indent on
+"
 
-" No me acuerdo que hacen
-set autoindent
-set copyindent
-set title
+"Theme
+  set background=dark
+  colorscheme gruvbox
 
-set number " Set line numbers
+  set termguicolors
+  if &term == "xterm"
+    set t_Co=256
+  endif
+"
 
-set cursorline " Highlight current line
-set cursorcolumn " Highlight current column
+" Lightline
+  set laststatus=2
+  set noshowmode
+  let g:lightline = {'colorscheme': 'gruvbox'}
+"
 
-set showmatch " Highlight matching [{()}]
+"UI
+  set number
+  syntax on
+  set cursorline
+  set cursorcolumn
+  set showmatch
+"
 
-syntax on " Enable syntax highlighting
-
-set termguicolors
-if &term == "xterm"
-  set t_Co=256
-endif
-
-" Lightline settings
-set laststatus=2
-set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-    \ }
-
-" PaperColor Theme settings
-"let g:PaperColor_Theme_Options = {
-"  \   'theme': {
-"  \     'default': {
-"  \	  'allow_bold': 1,
-"  \	  'allow_italic':1
-"  \     }
-"  \   }
-"  \ }
-
-set background=dark
-colorscheme gruvbox
-
-" Set tab = 2 spaces
-set expandtab "Tabs are spaces
-set tabstop=2 "Number of visual spaces per TAB
-set shiftwidth=2
-set smarttab
-
-" Allows cursor change in tmux mode
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+"Whitespace
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+  set softtabstop=2
+"

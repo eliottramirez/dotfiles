@@ -1,42 +1,33 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt beep
-unsetopt autocd
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/eliott/.zshrc'
+# zsh-newuser-install
+  HISTFILE=~/.zsh/.histfile
+  HISTSIZE=1000
+  SAVEHIST=2000
+  setopt beep
+  bindkey -v
+#
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# compinstall
+  zstyle :compinstall filename '/home/eliott/.zshrc'
+  autoload -Uz compinit
+  compinit
+# 
 
-autoload -Uz promptinit
-promptinit
+# prompt
+  PROMPT="%n@zonafranca: %~ > "
+#
 
-# prompt theme
-export PS1="%B%F{160}%f%F{189}%n%f %F{}:%F %F{15}%1~%f %F{9}➜%f %b"
+# aliases
+  alias ll='ls -lhaF'
+  alias cp='cp -rpv'
+  alias wo='sudo -E wo'
+#
 
-# Autostart tmux
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# Run on boot
+#  sudo /etc/init.d/nginx start
+#  sudo /etc/init.d/php7.4-fpm start
+#  sudo /etc/init.d/mysql start
+#
 
-
-# Aliases
-alias ls='exa -a'
-alias lsl='exa -lah'
-alias lst='exa -Ta'
-
-# Named Directories
-#hash -d Elixir="/home/eliott/Documents/Dev/Elixir"
-#hash -d Dev="/home/eliott/Documents/Dev"
-#hash -d Cards="/home/eliott/Documents/Dev/Elixir/Udemy/cards"
-
-# ZPlug Config
-# Source to bin file
-#source /usr/share/zsh/scripts/zplug/init.zsh
-#enhancd
-#zplug "b4b4r07/enhancd", use:init.sh
-#source ~/.zplug/repos/b4b4r07/enhancd/init.sh
+# shorcuts
+#  hash -d dir='path/to/dir'
+#
